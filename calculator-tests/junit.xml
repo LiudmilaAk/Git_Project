@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="7" failures="1" errors="0" time="0.495">
+  <testsuite name="Calculator" errors="0" failures="1" skipped="0" timestamp="2023-11-17T16:08:25" time="0.399" tests="7">
+    <testcase classname="Calculator add should return the sum of numbers" name="Calculator add should return the sum of numbers" time="0.004">
+    </testcase>
+    <testcase classname="Calculator multiply should return the product of numbers" name="Calculator multiply should return the product of numbers" time="0">
+    </testcase>
+    <testcase classname="Calculator subtraction should return the difference between two numbers" name="Calculator subtraction should return the difference between two numbers" time="0">
+    </testcase>
+    <testcase classname="Calculator divide should return the quotient of two numbers" name="Calculator divide should return the quotient of two numbers" time="0">
+    </testcase>
+    <testcase classname="Calculator exponentiation should return the square of a number" name="Calculator exponentiation should return the square of a number" time="0.001">
+    </testcase>
+    <testcase classname="Calculator methods should return NaN when non-numeric arguments are passed" name="Calculator methods should return NaN when non-numeric arguments are passed" time="0.002">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: NaN
+Received: &quot;0helloworld&quot;
+    at Object.toBe (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\test.js:46:46)
+    at Promise.then.completed (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\Liudmila_Akulovich\Git_Hometask3\calculator-tests\node_modules\jest-runner\build\runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname="Calculator divide should return Infinity when dividing by zero" name="Calculator divide should return Infinity when dividing by zero" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>
