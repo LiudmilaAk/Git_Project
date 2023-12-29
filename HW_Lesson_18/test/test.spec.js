@@ -41,7 +41,7 @@ describe('Automated tests', () => {
     const searchIcon = await driver.findElement(By.css('svg.vu8Pwe.tCHXDc.YSH9J'));
     await searchIcon.click();
     
-        // Ввод "driver" в поле поиска
+    // Ввод "driver" в поле поиска
     const searchInput = await driver.findElement(By.css('div.zKHdkd div.Xb9hP input'));
     await searchInput.sendKeys('driver');
     
