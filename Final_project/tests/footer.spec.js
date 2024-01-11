@@ -17,7 +17,7 @@ test.beforeEach(async ({ page }) => {
     });
 
 
-test('9 - should follow the link selected in the footer by its name', async () => {
+test('should follow the link selected in the footer by its name', async () => {
     const linkName = `Оплата`;
     await footer.goToPageWithFooterLinks(linkName);
     await expect(topNavMenu.breadCrumbLink).toContainText(linkName);

@@ -11,11 +11,11 @@ test.beforeEach(async ({ page }) => {
 
 test.describe(`test OZ.by website - Product Details Page`, async function () {
 
-test('15 - should check that product description contains image', async ({ page }) => {
+test('should check that product description contains image', async ({ page }) => {
     const header = new Header(page);
     const searchField = new SearchField(page);
     const productPage = new ProductPage(page);
-    const productName = 'Маска для волос';
+    const productName = 'Три товарища';
     await header.searchField.click();
     await searchField.findItemsBySearchField(productName);
     await expect(productPage.product).toBeTruthy();

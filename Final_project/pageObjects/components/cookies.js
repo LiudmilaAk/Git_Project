@@ -5,7 +5,8 @@ class Cookies {
         this.acceptCookies = page.locator('.button-accept-cookie');
         this.rejectCookies = page.locator('.button-reject-cookie');
     }
-    async goToAcceptCookies() {
+    
+    async acceptCookies() {
         const acceptCookies = await this.acceptCookies();
         await this.page.waitForSelector(acceptCookies);
         await this.page.hover(acceptCookies);

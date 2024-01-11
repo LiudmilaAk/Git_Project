@@ -17,19 +17,15 @@ class Cart {
         await this.page.hover(cartPageContain);
     }
 
-    async fillCart() {
-        await this.firstItem.click();
-        }
-
     async chooseItem(itemNumber) {
         await this.firstItem.click(itemNumber);
         await this.newItem.click();
     }
 
     async deleteFromCart() {
-        await this.page.waitForTimeout(1000);
+        await this.buttonDeleteFromCart.isVisible();
         await this.buttonDeleteFromCart.click();
-        await this.page.waitForTimeout(1000);
+        await this.buttonConfirmDeletionFromCart.isVisible();
     }
 }
 

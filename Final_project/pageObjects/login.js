@@ -10,10 +10,11 @@ class Login {
         this.invalidLogin = page.locator ('//a[@data-button-state="toreg"]/..');
         this.invalidPassword = page.locator ('//a[@data-button-state="toremind"]/..');
         this.noPasswordOrUsername = page.locator ('div.i-input-group__popover_visible .i-popover__line');
+        this.linkFavorites = page.locator('//div[@class="user-bar__item"]/following-sibling::*[1]');
                    
     }
 
-    async goToLoginWithEmail(username, password) {
+    async loginWithEmail(username, password) {
         await this.loginFormMobile.isEnabled();
         await this.loginFormEmail.click();
         await this.username.fill(username);
@@ -24,7 +25,6 @@ class Login {
 
     }
     
-
 }
 
 module.exports = Login;

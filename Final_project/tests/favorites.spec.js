@@ -28,33 +28,39 @@ test.beforeEach(async ({ page }) => {
     favorites = new Favorites(page);
     productPage = new ProductPage(page);
     await mainPage.navigate('https://oz.by/');
-    await cookies.goToAcceptCookies;
+    await cookies.acceptCookies;
     const productName = 'когтеточка';
     await header.loginIcon.click();
-    await login.goToLoginWithEmail('haroshik14@mail.ru', '98dB26');
+    await login.loginWithEmail('haroshik14@mail.ru', '98dB26');
     await header.searchField.click();
     await searchField.findItemsBySearchField(productName);
-    await cart.fillCart();
+    await cart.firstItem.click();
     await header.cartIcon.click();
     await cart.checkboxInCart.click();
     await favorites.addItemToFavorites();
     });
 
-test('6 - should add item to favorites from the cart', async function () {
+test('should add item to favorites from the cart', async function () {
     await favorites.buttonConfirmAddToFavorites.click();
     await expect(favorites.counterFavorites).toContainText('27');
     });
 
-test('7 - should check that added item is on the favorites page', async function () {
+test('should check that added item is on the favorites page', async function () {
     await favorites.buttonConfirmAddToFavorites.click();
-    await favorites.goToFavoritesPage();
+    await favorites.linkFavorites.click();
+    if (!await favorites.lastAddedFavoritesItem.isVisible()) {
+        await favorites.linkFavorites.click();
+    };
     await favorites.lastAddedFavoritesItem.click();
     await expect(productPage.buttonAlreadyAddedToFavoritesFromProductPage).toContainText('В избранном');
     });
 
-test('8 - should delete added item from favorites page', async function () {
+test('should delete added item from favorites page', async function () {
     await favorites.buttonConfirmAddToFavorites.click();
-    await favorites.goToFavoritesPage();
+    await favorites.linkFavorites.click();
+    if (!await favorites.lastAddedFavoritesItem.isVisible()) {
+        await favorites.linkFavorites.click();
+    };
     await favorites.lastAddedFavoritesItem.click();
     await productPage.buttonAlreadyAddedToFavoritesFromProductPage.click();
     await expect(favorites.counterFavorites).toContainText('26');
